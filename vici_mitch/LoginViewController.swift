@@ -12,7 +12,7 @@ import Alamofire
 class LoginViewController: UITableViewController {
    
     //MARK: Properties
-    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
    
     
@@ -28,16 +28,16 @@ class LoginViewController: UITableViewController {
     
     //MARK: actions
     @IBAction func loginButton(_ sender: UIButton) {
-        print("email: \(userNameTextField.text!)")
+        print("email: \(emailTextField.text!)")
         print("password: \(passwordTextField.text!)")
         
         
-        guard let userName = userNameTextField.text, !userName.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             //TODO: handle error
             return
         }
         let parameters: Parameters = [
-            "email":userName,
+            "email":email,
             "password":password
         ]
         
