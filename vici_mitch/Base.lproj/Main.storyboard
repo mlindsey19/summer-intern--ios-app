@@ -345,6 +345,9 @@
                                                     <state key="normal" title="Register">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="registerButton:" destination="KOZ-yP-aYD" eventType="touchUpInside" id="A5N-4V-4Ur"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -365,7 +368,7 @@
                     </tableView>
                     <connections>
                         <outlet property="emailRegister" destination="Isk-Hb-ytU" id="M3U-OT-rhg"/>
-                        <outlet property="firstNameRegister" destination="XJh-Lm-izl" id="Emf-Xi-45j"/>
+                        <outlet property="firstNameRegisterTextField" destination="XJh-Lm-izl" id="Emf-Xi-45j"/>
                         <outlet property="lastNameRegister" destination="kXe-a8-dCH" id="fje-IT-1T0"/>
                         <outlet property="mobileNumberRegister" destination="PKj-K0-MWz" id="CMf-uf-sda"/>
                         <outlet property="passwordCheck" destination="9ka-c4-dMx" id="1Va-dd-Tqa"/>
