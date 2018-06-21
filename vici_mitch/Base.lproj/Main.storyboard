@@ -32,7 +32,7 @@
                                 </constraints>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="CST-3c-k9d" kind="show" id="C5M-Nb-GHl"/>
+                                    <segue destination="KOZ-yP-aYD" kind="show" id="MSM-AY-HzP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-aa-7CR">
@@ -161,28 +161,11 @@
                     </tableView>
                     <connections>
                         <outlet property="passwordTextField" destination="Wgf-0K-fyn" id="71p-TO-cha"/>
-                        <outlet property="userNameTextField" destination="NPO-Tb-7kE" id="UNh-8o-C7T"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ogv-nP-3fM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1304.8" y="-18.440779610194905"/>
-        </scene>
-        <!--Register View Controller-->
-        <scene sceneID="5rz-2F-j8U">
-            <objects>
-                <viewController id="CST-3c-k9d" customClass="RegisterViewController" customModule="vici_mitch" customModuleProvider="target" sceneMemberID="viewController">
-                    <containerView key="view" opaque="NO" contentMode="scaleToFill" id="Dnl-OQ-Je5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <connections>
-                            <segue destination="KOZ-yP-aYD" kind="embed" id="fOE-Hz-yKw"/>
-                        </connections>
-                    </containerView>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i38-Vk-eiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-746" y="1024"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ABG-Lt-Q31">
@@ -510,7 +493,6 @@
                     </tableView>
                     <connections>
                         <outlet property="emailRegister" destination="Isk-Hb-ytU" id="M3U-OT-rhg"/>
-                        <outlet property="firstNameRegisterTextField" destination="XJh-Lm-izl" id="Emf-Xi-45j"/>
                         <outlet property="lastNameRegister" destination="kXe-a8-dCH" id="fje-IT-1T0"/>
                         <outlet property="mobileNumberRegister" destination="PKj-K0-MWz" id="CMf-uf-sda"/>
                         <outlet property="passwordCheck" destination="9ka-c4-dMx" id="1Va-dd-Tqa"/>
@@ -520,7 +502,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yer-cX-Df1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="1400"/>
+            <point key="canvasLocation" x="578" y="869"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IPz-eP-3Mz">
