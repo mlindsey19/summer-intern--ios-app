@@ -8,14 +8,24 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // background
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "backgroundImage")
         backgroundImage.contentMode = UIViewContentMode.scaleToFill
-        self.view.insertSubview(backgroundImage, at: 0)    }
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        // remove empty cells from view
+        self.tableView.tableFooterView = UIView()
+        
+    }
+    
+ 
+
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
