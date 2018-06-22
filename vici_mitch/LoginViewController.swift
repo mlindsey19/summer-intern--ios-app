@@ -22,6 +22,8 @@ class LoginViewController: UITableViewController {
        
         //Add new blank view under table
         self.tableView.tableFooterView = UIView()
+        
+  
     }
     
 

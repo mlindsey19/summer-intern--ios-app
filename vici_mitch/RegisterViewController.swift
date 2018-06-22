@@ -29,8 +29,9 @@ class RegisterViewController: UITableViewController {
 
         //clear bottom of table view
         self.tableView.tableFooterView = UIView()
-        
-        
+
+     
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
