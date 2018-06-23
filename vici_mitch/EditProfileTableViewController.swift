@@ -1,88 +1,39 @@
 //
-//  TableViewController.swift
+//  EditProfileTableViewController.swift
 //  vici_mitch
 //
-//  Created by Daniel Reller on 6/14/18.
+//  Created by Mitch on 6/23/18.
 //  Copyright © 2018 Mitch. All rights reserved.
 //
 
 import UIKit
 
-class RegisterViewController: UITableViewController {
+class EditProfileTableViewController: UITableViewController {
 
-    //MARK: Properties
-    @IBOutlet weak var firstNameRegister: UITextField!
-    @IBOutlet weak var lastNameRegister: UITextField!
-    @IBOutlet weak var userNameRegister: UITextField!
-    @IBOutlet weak var mobileNumberRegister: UITextField!
-    @IBOutlet weak var emailRegister: UITextField!
-    @IBOutlet weak var passwordRegister: UITextField!
-    @IBOutlet weak var passwordCheck: UITextField!
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //background
-        tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
-
         
-        //clear bottom of table view
-        self.tableView.tableFooterView = UIView()
-     
-
+        self.tabBarController?.tabBar.isHidden = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    //MARK: actions
-    @IBAction func registerButton(_ sender: UIButton) {
-        print("firstName: \(firstNameRegister.text!)")
-        print("lastName: \(lastNameRegister.text!)")
-        print("userNAme: \(userNameRegister.text!)")
-        print("number: \(mobileNumberRegister.text!)")
-        print("email: \(emailRegister.text!)")
-        print("password: \(passwordRegister.text!)") //delete
-        
-        guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
-                let lastName = lastNameRegister.text, !lastName.isEmpty,
-                let userName = userNameRegister.text, !userName.isEmpty,
-                let email = emailRegister.text, !email.isEmpty,
-                let password = passwordRegister.text, !password.isEmpty,
-                let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
-        else {
-            //TODO: handle error
-            return
-        }
-        
-        
-
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     // MARK: - Table view data source
 
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
+
+
+   
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
