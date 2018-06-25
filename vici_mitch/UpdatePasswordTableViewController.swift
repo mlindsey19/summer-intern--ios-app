@@ -1,64 +1,80 @@
 //
-//  EditProfileTableViewController.swift
+//  UpdatePasswordTableViewController.swift
 //  vici_mitch
 //
-//  Created by Mitch on 6/23/18.
+//  Created by Daniel Reller on 6/25/18.
 //  Copyright © 2018 Mitch. All rights reserved.
 //
 
 import UIKit
 
-class EditProfileTableViewController: UITableViewController, UIImagePickerControllerDelegate, UITextFieldDelegate, UINavigationControllerDelegate {
+class UpdatePasswordTableViewController: UITableViewController {
 
-    //MARK: properties
-    @IBOutlet var textFields: [UITextField]!
-    @IBOutlet weak var textView: UITextView!
+    //MARK: Properties
+    @IBOutlet weak var oldPassword: UITextField!
+    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var newPasswordCheck: UITextField!
+    @IBOutlet weak var togglePassOld: UIButton!
+    @IBOutlet weak var togglePassNew: UIButton!
+    @IBOutlet weak var togglePassNewCheck: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //background
-        tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //Add new blank view under table
+        self.tableView.tableFooterView = UIView()
+        
+        //backgound
+        tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
-
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }
     
-    @IBAction func editProfilePicture(_ sender: UIButton) {
-        // Hide the keyboard.
-        
-        for textField in self.textFields{
-            textField.resignFirstResponder()
-        }
-        textView.resignFirstResponder()
-        
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        let imagePickerController = UIImagePickerController()
-        
-        // Only allow photos to be picked, not taken.
-        //TODO: add choice for camera or photoLibrary
-        imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image.
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-        
-    }
     
+    //MARK: actions
+ 
+    @IBAction func toggleShowOldPass(_ sender: UIButton) {
+        if oldPassword.isSecureTextEntry == true {
+            oldPassword.isSecureTextEntry = false
+            togglePassOld.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+        else if oldPassword.isSecureTextEntry == false {
+            oldPassword.isSecureTextEntry = true
+            togglePassOld.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
+    }
+    @IBAction func toggleShowNewPass(_ sender: UIButton) {
+        if newPassword.isSecureTextEntry == true {
+            newPassword.isSecureTextEntry = false
+            togglePassNew.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+        else if newPassword.isSecureTextEntry == false {
+            newPassword.isSecureTextEntry = true
+            togglePassNew.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
+    }
+    @IBAction func toggleShowNewCheckPass(_ sender: UIButton) {
+        if newPasswordCheck.isSecureTextEntry == true {
+            newPasswordCheck.isSecureTextEntry = false
+            togglePassNewCheck.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+        else if newPasswordCheck.isSecureTextEntry == false {
+            newPasswordCheck.isSecureTextEntry = true
+            togglePassNewCheck.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
+    }
     
     
     
@@ -66,10 +82,7 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     
     // MARK: - Table view data source
 
-
-
-   
-
+  
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
