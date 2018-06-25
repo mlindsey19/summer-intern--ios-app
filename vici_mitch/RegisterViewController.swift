@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RegisterViewController: UITableViewController {
+
+class RegisterViewController: UITableViewController, UITextFieldDelegate {
 
     //MARK: Properties
     @IBOutlet weak var firstNameRegister: UITextField!
@@ -72,6 +73,8 @@ class RegisterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {

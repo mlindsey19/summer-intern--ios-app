@@ -14,6 +14,7 @@
 		3052FB9320C9D59A00CB09F8 /* vici_mitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9220C9D59A00CB09F8 /* vici_mitchTests.swift */; };
 		3052FB9E20C9D59A00CB09F8 /* vici_mitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9D20C9D59A00CB09F8 /* vici_mitchUITests.swift */; };
 		30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */; };
+		30D04A2720E05F4900D16096 /* PasswordTextField in Resources */ = {isa = PBXBuildFile; fileRef = 30D04A2620E05F4900D16096 /* PasswordTextField */; };
 		30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 30D0E33320C9FD17009A9FE4 /* Cartfile */; };
 		30D0E33720C9FE5C009A9FE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; };
 		30D0E33820C9FE5C009A9FE4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -67,6 +68,7 @@
 		3052FB9D20C9D59A00CB09F8 /* vici_mitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vici_mitchUITests.swift; sourceTree = "<group>"; };
 		3052FB9F20C9D59A00CB09F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
+		30D04A2620E05F4900D16096 /* PasswordTextField */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PasswordTextField; path = Carthage/Checkouts/PasswordTextField/PasswordTextField; sourceTree = "<group>"; };
 		30D0E33320C9FD17009A9FE4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				3052FB9120C9D59A00CB09F8 /* vici_mitchTests */,
 				3052FB9C20C9D59A00CB09F8 /* vici_mitchUITests */,
 				3052FB7B20C9D59800CB09F8 /* Products */,
+				30D04A2620E05F4900D16096 /* PasswordTextField */,
 				30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */,
 			);
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3052FB8520C9D59A00CB09F8 /* Assets.xcassets in Resources */,
+				30D04A2720E05F4900D16096 /* PasswordTextField in Resources */,
 				30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */,
 				3052FB8320C9D59800CB09F8 /* Main.storyboard in Resources */,
 			);
