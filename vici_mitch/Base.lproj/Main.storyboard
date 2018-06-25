@@ -67,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dld-Xi-tml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="125.4872563718141"/>
+            <point key="canvasLocation" x="-172" y="125"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="DIU-YA-HKc">
@@ -130,15 +130,41 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                             <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="showToggleButtonWhile" value="always"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="customShowSecureTextImage" value="visibility_on.png"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="customHideSecureTextImage" value="visibility_off.png"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpB-he-ZUM">
+                                                    <rect key="frame" x="329" y="11" width="30" height="38"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="VYf-uI-yCQ"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="eyeDoNotShow">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="toggleShowPassword:" destination="v7d-7w-dtC" eventType="touchUpInside" id="bUa-DJ-1Ie"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="leading" secondItem="fmS-f6-x8O" secondAttribute="leadingMargin" id="3R9-nN-L8S"/>
-                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="top" secondItem="fmS-f6-x8O" secondAttribute="topMargin" id="EN8-aS-ufm"/>
-                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="bottom" secondItem="fmS-f6-x8O" secondAttribute="bottomMargin" id="dyK-i6-Nrc"/>
-                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="trailing" secondItem="fmS-f6-x8O" secondAttribute="trailingMargin" id="gOr-3O-wkG"/>
+                                                <constraint firstItem="OpB-he-ZUM" firstAttribute="top" secondItem="fmS-f6-x8O" secondAttribute="topMargin" id="4bz-G7-tAd"/>
+                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="trailing" secondItem="OpB-he-ZUM" secondAttribute="trailing" id="DlI-Er-VgI"/>
+                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="top" secondItem="OpB-he-ZUM" secondAttribute="top" id="JIC-Fp-Fvf"/>
+                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="leading" secondItem="fmS-f6-x8O" secondAttribute="leadingMargin" id="UPV-1Q-ZGt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OpB-he-ZUM" secondAttribute="trailing" id="fDP-nT-4mj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="OpB-he-ZUM" secondAttribute="bottom" id="hvA-hA-lV3"/>
+                                                <constraint firstItem="Wgf-0K-fyn" firstAttribute="bottom" secondItem="OpB-he-ZUM" secondAttribute="bottom" id="wo8-ug-1vU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,12 +210,13 @@
                     <connections>
                         <outlet property="emailTextField" destination="NPO-Tb-7kE" id="PcX-ih-x2f"/>
                         <outlet property="passwordTextField" destination="Wgf-0K-fyn" id="71p-TO-cha"/>
+                        <outlet property="toggleShowPassword" destination="OpB-he-ZUM" id="kTM-84-0U7"/>
                         <segue destination="pl2-Bq-hGu" kind="showDetail" id="5Ui-Bu-gfP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ogv-nP-3fM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.8" y="-18.440779610194905"/>
+            <point key="canvasLocation" x="530" y="-46"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="EGY-t4-C6o">
@@ -216,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGK-UQ-hJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="1095"/>
+            <point key="canvasLocation" x="2006" y="753"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="p8v-sd-Ars">
@@ -395,7 +422,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67Y-IL-Q1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4042" y="435"/>
+            <point key="canvasLocation" x="2714" y="1"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LlN-Mi-M71">
@@ -413,7 +440,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBo-bI-Ztk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1613" y="762"/>
+            <point key="canvasLocation" x="1258" y="125"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="XLK-d7-ANu">
@@ -581,7 +608,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buT-Th-Tpq" customClass="PasswordTextField">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="buT-Th-Tpq">
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.21580693493150685" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -593,12 +620,30 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qi9-g2-H95">
+                                                    <rect key="frame" x="329" y="11" width="30" height="38"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="C32-qn-Ybz"/>
+                                                    </constraints>
+                                                    <state key="normal" title="TogglePassword1" image="eyeDoNotShow">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="toggleShowPassword1:" destination="RNS-ez-wQs" eventType="touchUpInside" id="wzC-61-cdM"/>
+                                                        <action selector="toggleShowPassword:" destination="v7d-7w-dtC" eventType="touchUpInside" id="TS1-CJ-JQZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="buT-Th-Tpq" secondAttribute="bottom" id="IH9-8G-MYB"/>
+                                                <constraint firstItem="buT-Th-Tpq" firstAttribute="bottom" secondItem="Qi9-g2-H95" secondAttribute="bottom" id="Nxo-3p-Cs2"/>
+                                                <constraint firstItem="buT-Th-Tpq" firstAttribute="top" secondItem="Qi9-g2-H95" secondAttribute="top" id="OvX-S0-IYi"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="buT-Th-Tpq" secondAttribute="trailing" id="bhl-K7-UTR"/>
                                                 <constraint firstItem="buT-Th-Tpq" firstAttribute="top" secondItem="ZCL-UD-YCo" secondAttribute="topMargin" id="drY-Ls-VXQ"/>
                                                 <constraint firstItem="buT-Th-Tpq" firstAttribute="leading" secondItem="ZCL-UD-YCo" secondAttribute="leadingMargin" id="jQi-F0-hba"/>
+                                                <constraint firstItem="Qi9-g2-H95" firstAttribute="trailing" secondItem="buT-Th-Tpq" secondAttribute="trailing" id="xfp-bG-guy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -610,7 +655,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-0i-fqj" customClass="PasswordTextField" customModule="vici_mitch" customModuleProvider="target">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-Enter Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zf7-0i-fqj">
                                                     <rect key="frame" x="16" y="11" width="343" height="38"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.21580693493150685" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -633,12 +678,30 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smj-rw-IUH">
+                                                    <rect key="frame" x="329" y="11" width="30" height="38"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Zux-Uu-pCh"/>
+                                                    </constraints>
+                                                    <state key="normal" title="TogglePassword2" image="eyeDoNotShow">
+                                                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="toggleShowPassword2:" destination="RNS-ez-wQs" eventType="touchUpInside" id="ZVm-m2-T1R"/>
+                                                        <action selector="toggleShowPassword:" destination="v7d-7w-dtC" eventType="touchUpInside" id="lTY-v0-OU1"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zf7-0i-fqj" secondAttribute="bottom" id="A53-Zx-kxc"/>
+                                                <constraint firstItem="Zf7-0i-fqj" firstAttribute="top" secondItem="Smj-rw-IUH" secondAttribute="top" id="FMv-9F-oWd"/>
                                                 <constraint firstItem="Zf7-0i-fqj" firstAttribute="leading" secondItem="8vn-1a-udQ" secondAttribute="leadingMargin" id="Kob-dM-jEZ"/>
                                                 <constraint firstItem="Zf7-0i-fqj" firstAttribute="top" secondItem="8vn-1a-udQ" secondAttribute="topMargin" id="aEU-PY-fpt"/>
+                                                <constraint firstItem="Zf7-0i-fqj" firstAttribute="bottom" secondItem="Smj-rw-IUH" secondAttribute="bottom" id="coM-3F-a0w"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zf7-0i-fqj" secondAttribute="trailing" id="eQF-cG-91U"/>
+                                                <constraint firstItem="Zf7-0i-fqj" firstAttribute="trailing" secondItem="Smj-rw-IUH" secondAttribute="trailing" id="lty-2X-NJc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -682,13 +745,15 @@
                         <outlet property="mobileNumberRegister" destination="8Md-pa-TLk" id="neL-Eu-0Wq"/>
                         <outlet property="passwordCheck" destination="Zf7-0i-fqj" id="DhS-47-Tfn"/>
                         <outlet property="passwordRegister" destination="buT-Th-Tpq" id="2oC-uz-r1Z"/>
+                        <outlet property="togglePassword1" destination="Qi9-g2-H95" id="g0P-mm-0dM"/>
+                        <outlet property="togglePassword2" destination="Smj-rw-IUH" id="7Xs-CP-QQK"/>
                         <outlet property="userNameRegister" destination="nSg-45-I74" id="E5F-Vm-Gkd"/>
                         <segue destination="pl2-Bq-hGu" kind="showDetail" id="dQu-aC-Rov"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SVW-kV-iXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="949"/>
+            <point key="canvasLocation" x="530" y="654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f2c-nD-YfJ">
@@ -959,7 +1024,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNf-7d-g4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4892" y="435"/>
+            <point key="canvasLocation" x="3490" y="0.0"/>
         </scene>
         <!--Item-->
         <scene sceneID="FMF-A3-keI">
@@ -978,17 +1043,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jht-Mt-AIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672.8000000000002" y="434.93253373313348"/>
+            <point key="canvasLocation" x="2006" y="2"/>
         </scene>
     </scenes>
     <resources>
         <image name="Logo_white_'vici'_stacked" width="390" height="570"/>
         <image name="backgroundImage" width="187" height="333"/>
         <image name="defaultProfileImage" width="300" height="300"/>
+        <image name="eyeDoNotShow" width="24" height="24"/>
         <image name="visibility_off.png" width="24" height="24"/>
         <image name="visibility_on.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dQu-aC-Rov"/>
+        <segue reference="5Ui-Bu-gfP"/>
     </inferredMetricsTieBreakers>
 </document>

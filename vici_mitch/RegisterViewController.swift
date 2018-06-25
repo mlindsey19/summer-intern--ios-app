@@ -19,6 +19,8 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var emailRegister: UITextField!
     @IBOutlet weak var passwordRegister: UITextField!
     @IBOutlet weak var passwordCheck: UITextField!
+    @IBOutlet weak var togglePassword1: UIButton!
+    @IBOutlet weak var togglePassword2: UIButton!
     
     
     
@@ -62,9 +64,28 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             //TODO: handle error
             return
         }
-        
-        
-
+    
+    }
+    //toggle show password
+    @IBAction func toggleShowPassword1(_ sender: UIButton) {
+        if passwordRegister.isSecureTextEntry == true {
+        passwordRegister.isSecureTextEntry = false
+        togglePassword1.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+    }
+    else if passwordRegister.isSecureTextEntry == false {
+        passwordRegister.isSecureTextEntry = true
+        togglePassword1.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
+    }
+    @IBAction func toggleShowPassword2(_ sender: UIButton) {
+        if passwordCheck.isSecureTextEntry == true {
+            passwordCheck.isSecureTextEntry = false
+            togglePassword2.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+        else if passwordCheck.isSecureTextEntry == false {
+            passwordCheck.isSecureTextEntry = true
+            togglePassword2.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
     }
     
 

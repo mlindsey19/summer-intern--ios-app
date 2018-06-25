@@ -14,7 +14,8 @@ class LoginViewController: UITableViewController {
     //MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-   
+    @IBOutlet weak var toggleShowPassword: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -31,7 +32,6 @@ class LoginViewController: UITableViewController {
   
     }
     
-
     
     //MARK: actions
     @IBAction func loginButton(_ sender: UIButton) {
@@ -73,14 +73,24 @@ class LoginViewController: UITableViewController {
                 ]
             ]
             
-            
-            
-            
         }
     }
     
+    //toggle secure password entry
+    //TODO: add code to keep password after secure text is re-enabled but check if security issue
     
-    
+    @IBAction func toggleShowPassword(_ sender: UIButton) {
+      
+        if passwordTextField.isSecureTextEntry == true {
+            passwordTextField.isSecureTextEntry = false
+            toggleShowPassword.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+       else if passwordTextField.isSecureTextEntry == false {
+            passwordTextField.isSecureTextEntry = true
+            toggleShowPassword.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+        }
+    }
+
     
     
 //valid email
