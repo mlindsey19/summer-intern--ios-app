@@ -17,6 +17,7 @@
 		30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 30D0E33320C9FD17009A9FE4 /* Cartfile */; };
 		30D0E33720C9FE5C009A9FE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; };
 		30D0E33820C9FE5C009A9FE4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F368671420E3ED6400B6DCE3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */; };
 		F39E731C20D2B49D00EBCF0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */; };
 		F39E731E20D8458000EBCF0A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */; };
 		F39E732020DD3BF300EBCF0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */; };
@@ -70,6 +71,7 @@
 		30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		30D0E33320C9FD17009A9FE4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */,
 				30D0E33320C9FD17009A9FE4 /* Cartfile */,
 				3052FB8120C9D59800CB09F8 /* Main.storyboard */,
+				F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */,
 				F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */,
 				F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */,
 				3052FB8420C9D59A00CB09F8 /* Assets.xcassets */,
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F368671420E3ED6400B6DCE3 /* ForgotPasswordViewController.swift in Sources */,
 				3052FB8020C9D59800CB09F8 /* LoginViewController.swift in Sources */,
 				F39E731E20D8458000EBCF0A /* WelcomeViewController.swift in Sources */,
 				F39E732020DD3BF300EBCF0A /* ProfileViewController.swift in Sources */,
