@@ -44,8 +44,8 @@ class LoginViewController: UITableViewController {
             return
         }
         let parameters: Parameters = [
-            "email":email,
-            "password":password
+            "email": email,
+            "password": password
         ]
         
         Alamofire.request("http://vici.beanstalkweb.com/login.php", method: .post, parameters: parameters).responseJSON { response in

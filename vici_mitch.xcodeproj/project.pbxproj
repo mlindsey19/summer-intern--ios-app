@@ -13,6 +13,7 @@
 		3052FB8520C9D59A00CB09F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3052FB8420C9D59A00CB09F8 /* Assets.xcassets */; };
 		3052FB9320C9D59A00CB09F8 /* vici_mitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9220C9D59A00CB09F8 /* vici_mitchTests.swift */; };
 		3052FB9E20C9D59A00CB09F8 /* vici_mitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9D20C9D59A00CB09F8 /* vici_mitchUITests.swift */; };
+		305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A5F7220E6D3AB00E8AC87 /* Constants.swift */; };
 		30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */; };
 		30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 30D0E33320C9FD17009A9FE4 /* Cartfile */; };
 		30D0E33720C9FE5C009A9FE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; };
@@ -67,6 +68,7 @@
 		3052FB9920C9D59A00CB09F8 /* vici_mitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vici_mitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3052FB9D20C9D59A00CB09F8 /* vici_mitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vici_mitchUITests.swift; sourceTree = "<group>"; };
 		3052FB9F20C9D59A00CB09F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		305A5F7220E6D3AB00E8AC87 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		30D0E33320C9FD17009A9FE4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		3052FB7C20C9D59800CB09F8 /* vici_mitch */ = {
 			isa = PBXGroup;
 			children = (
+				305A5F7220E6D3AB00E8AC87 /* Constants.swift */,
 				3052FB7D20C9D59800CB09F8 /* AppDelegate.swift */,
 				3052FB7F20C9D59800CB09F8 /* LoginViewController.swift */,
 				F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */,
@@ -318,6 +321,7 @@
 				F39E731C20D2B49D00EBCF0A /* RegisterViewController.swift in Sources */,
 				3052FB7E20C9D59800CB09F8 /* AppDelegate.swift in Sources */,
 				30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */,
+				305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

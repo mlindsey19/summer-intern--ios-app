@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
+    
+    let url = "http://mitch.beanstalkweb.com"
 
     //MARK: Properties
     @IBOutlet weak var firstNameRegister: UITextField!
@@ -21,10 +23,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordCheck: UITextField!
     @IBOutlet weak var togglePassword1: UIButton!
     @IBOutlet weak var togglePassword2: UIButton!
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -64,8 +62,27 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             //TODO: handle error
             return
         }
+        
+        let parameters: Parameters = [
+            Keys.email: email,
+            Keys.firstName: firstName,
+            Keys.lastName: lastName,
+            Keys.desiredUserName: userName,
+            Keys.password: password,
+            Keys.mobileNumber: mobileNumber
+        ]
+        
+        Alamofire.request(url, method: HTTPMethod.post, parameters: parameters).responseJSON { (response) in
+            print(response.result.value)
+        }
     
     }
+
+    
+    func handleJSONResponse(response: DataResponse<Any>){
+        
+    }
+    
     //toggle show password
     @IBAction func toggleShowPassword1(_ sender: UIButton) {
         if passwordRegister.isSecureTextEntry == true {
