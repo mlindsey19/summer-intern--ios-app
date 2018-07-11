@@ -16,8 +16,6 @@ class LoginViewController: UITableViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var toggleShowPassword: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -28,8 +26,7 @@ class LoginViewController: UITableViewController {
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
 
-        
-  
+
     }
     
     
@@ -44,19 +41,19 @@ class LoginViewController: UITableViewController {
             return
         }
         let parameters: Parameters = [
-            "email": email,
-            "password": password
+            Keys.email: email,
+            Keys.password: password
         ]
         
-        Alamofire.request("http://vici.beanstalkweb.com/login.php", method: .post, parameters: parameters).responseJSON { response in
+        Alamofire.request(URL.login, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
             print(response.result.value)
+            
             
             guard let jsonData = response.result.value as? [String: Any] else {
                 print("shit. we fucked up")
                 return
             }
-            
             // MOCKED JSON RESPONSE
             let mockJsonData: [String: Any] = [
                 "error": false,

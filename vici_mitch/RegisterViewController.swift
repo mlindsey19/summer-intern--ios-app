@@ -10,8 +10,6 @@ import UIKit
 import Alamofire
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
-    
-    let url = "http://mitch.beanstalkweb.com"
 
     //MARK: Properties
     @IBOutlet weak var firstNameRegister: UITextField!
@@ -45,12 +43,12 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     //MARK: actions
     @IBAction func registerButton(_ sender: UIButton) {
-        print("firstName: \(firstNameRegister.text!)")
-        print("lastName: \(lastNameRegister.text!)")
-        print("userNAme: \(userNameRegister.text!)")
-        print("number: \(mobileNumberRegister.text!)")
-        print("email: \(emailRegister.text!)")
-        print("password: \(passwordRegister.text!)") //delete
+//        print("firstName: \(firstNameRegister.text!)")
+//        print("lastName: \(lastNameRegister.text!)")
+//        print("userNAme: \(userNameRegister.text!)")
+//        print("number: \(mobileNumberRegister.text!)")
+//        print("email: \(emailRegister.text!)")
+//        print("password: \(passwordRegister.text!)") //delete
         
         guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
                 let lastName = lastNameRegister.text, !lastName.isEmpty,
@@ -64,18 +62,28 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         }
         
         let parameters: Parameters = [
-            Keys.email: email,
-            Keys.firstName: firstName,
-            Keys.lastName: lastName,
-            Keys.desiredUserName: userName,
-            Keys.password: password,
-            Keys.mobileNumber: mobileNumber
+            Keys.firstName:firstName,
+            Keys.lastName:lastName,
+            Keys.desiredUserName:userName,
+            Keys.email:email,
+            Keys.mobileNumber:mobileNumber,
+            Keys.password:password
         ]
-        
-        Alamofire.request(url, method: HTTPMethod.post, parameters: parameters).responseJSON { (response) in
+       
+    print(parameters)
+      
+        Alamofire.request(URL.register, method: .post, parameters: parameters).responseJSON { response in
+           // print(response.request)
+            print(response.result)  // result of response serializaion
             print(response.result.value)
-        }
+            
+            guard let jsonData = response.result.value as? [String: Any] else {
+                print("shit. we fucked up")
+                return
+            }
     
+     
+        }
     }
 
     
@@ -113,71 +121,5 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
 
     
     
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
 }

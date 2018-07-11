@@ -11,8 +11,41 @@ import Foundation
 struct Keys {
     static let firstName = "firstName"
     static let lastName = "lastName"
-    static let desiredUserName = "desiredUserName"
-    static let email = "email"
+    static let desiredUserName = "desiredUsername"
     static let mobileNumber = "mobileNumber"
+    static let email = "email"
     static let password = "password"
 }
+
+struct URL {
+    static let login = "http://mitch.beanstalkweb.com/login.php"
+    static let register = "http://mitch.beanstalkweb.com/register.php"
+    static let updateUser = "http://mitch.beanstalkweb.com/updateUser.php"
+}
+
+struct User: Decodable{
+    static var uniqueID: String = ""
+    static var firstName = ""
+    static var lastName = ""
+    static var desiredUsername = ""
+    static var email = ""
+    static var mobileNumber = ""
+    static var password = ""
+    static var userProfilePhoto = ""
+    static var bio = ""
+}
+//let mockJsonData: [String: Any] = [
+//    "error": false,
+//    "message": "Successfully Logged In",
+//    "uid": "test_uid",
+//    "user": [
+//        "firstName": "test_first_name",
+//        "lastName": "test_last_name",
+//        "desiredUsername": "test_username",
+//        "email": "test_email",
+//        "mobilePhone": "test_phone_number",
+//        "photoStorage": "test_photo_storage",
+//        "userBio": "test_bio"
+//]
+
+
