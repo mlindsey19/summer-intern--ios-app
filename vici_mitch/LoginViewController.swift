@@ -47,31 +47,20 @@ class LoginViewController: UITableViewController {
         
         Alamofire.request(URL.login, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
-            print(response.result.value)
             
+            guard let data = response.data, let utf8String = String(data: data, encoding: .utf8) else {return}
+            print(utf8String)
             
-            guard let jsonData = response.result.value as? [String: Any] else {
-                print("shit. we fucked up")
+            let decoder = JSONDecoder()
+            guard let userInfo = try? decoder.decode(JSONResponseStruct.self, from: data)
+                else {print("did not parse correctly")
                 return
             }
-            // MOCKED JSON RESPONSE
-            let mockJsonData: [String: Any] = [
-                "error": false,
-                "message": "Successfully Logged In",
-                "uid": "test_uid",
-                "user": [
-                    "firstName": "test_first_name",
-                    "lastName": "test_last_name",
-                    "desiredUsername": "test_username",
-                    "email": "test_email",
-                    "mobilePhone": "test_phone_number",
-                    "photoStorage": "test_photo_storage",
-                    "userBio": "test_bio"
-                ]
-            ]
+           
             
         }
     }
+
     
     //toggle secure password entry
     //TODO: add code to keep password after secure text is re-enabled but check if security issue

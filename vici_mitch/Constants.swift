@@ -23,18 +23,18 @@ struct URL {
     static let updateUser = "http://mitch.beanstalkweb.com/updateUser.php"
 }
 
-struct User: Decodable{
-    static var uniqueID: String = ""
-    static var firstName = ""
-    static var lastName = ""
-    static var desiredUsername = ""
-    static var email = ""
-    static var mobileNumber = ""
-    static var password = ""
-    static var userProfilePhoto = ""
-    static var bio = ""
-}
-//let mockJsonData: [String: Any] = [
+//struct User: Decodable{
+//    static var uniqueID: String = ""
+//    static var firstName = ""
+//    static var lastName = ""
+//    static var desiredUsername = ""
+//    static var email = ""
+//    static var mobileNumber = ""
+//    static var password = ""
+//    static var userProfilePhoto = ""
+//    static var bio = ""
+//}
+//struct JSONResponse: Decodable{
 //    "error": false,
 //    "message": "Successfully Logged In",
 //    "uid": "test_uid",
@@ -46,6 +46,17 @@ struct User: Decodable{
 //        "mobilePhone": "test_phone_number",
 //        "photoStorage": "test_photo_storage",
 //        "userBio": "test_bio"
-//]
+//    ]}
 
-
+struct JSONResponseStruct: Decodable {
+    let error: Bool?
+    let message: String?
+    let uid: String?
+    let firstName: String?
+    let lastName: String?
+    let desiredUsername: String?
+    let email: String?
+    let mobileNumber: String?
+    let photoStorage: String?
+    let userBio: String?
+}
