@@ -60,3 +60,15 @@ struct JSONResponseStruct: Decodable {
     let photoStorage: String?
     let userBio: String?
 }
+struct CurrentUser{
+    static var error: Bool? = false
+    static var message: String? = ""
+    static var uid: String? = ""
+    static var firstName: String? = ""
+    static var lastName: String? = ""
+    static var desiredUsername: String? = ""
+    static var email: String? = ""
+    static var mobileNumber: String? = ""
+    static var photoStorage: String? = ""
+    static var userBio: String? = ""
+}

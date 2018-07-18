@@ -9,7 +9,7 @@
 import UIKit
 
 class UpdatePasswordTableViewController: UITableViewController {
-
+    
     //MARK: Properties
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword: UITextField!
@@ -21,19 +21,19 @@ class UpdatePasswordTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Add new blank view under table
         self.tableView.tableFooterView = UIView()
         
         //backgound
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
@@ -44,7 +44,7 @@ class UpdatePasswordTableViewController: UITableViewController {
     
     
     //MARK: actions
- 
+    
     @IBAction func toggleShowOldPass(_ sender: UIButton) {
         if oldPassword.isSecureTextEntry == true {
             oldPassword.isSecureTextEntry = false
@@ -78,64 +78,12 @@ class UpdatePasswordTableViewController: UITableViewController {
     
     
     
+    @IBAction func updatePasswordButton(_ sender: UIButton) {
+        print(CurrentUser.desiredUsername,CurrentUser.email, CurrentUser.firstName, separator: "\n")
+        
+    }
     
     
-    // MARK: - Table view data source
-
-  
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

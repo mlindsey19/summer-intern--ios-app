@@ -9,34 +9,52 @@
 import UIKit
 
 class ProfileViewController: UITableViewController {
-
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var mobileNumberLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userBio: UITextView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        firstNameLabel.text = CurrentUser.firstName!
+        lastNameLabel.text = CurrentUser.lastName!
+        mobileNumberLabel.text = "Mobile Number: \(CurrentUser.mobileNumber!)"
+        emailLabel.text = "Email: \(CurrentUser.email!)"
+        userNameLabel.text = "Username: \(CurrentUser.desiredUsername!)"
+        userBio.text = CurrentUser.userBio!
+        
         // background
-       
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
-
+        
         // remove empty cells from view
         self.tableView.tableFooterView = UIView()
         
     }
     
- 
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

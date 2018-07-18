@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
-
+    
     //MARK: Properties
     @IBOutlet weak var firstNameRegister: UITextField!
     @IBOutlet weak var lastNameRegister: UITextField!
@@ -25,40 +25,38 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //background
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
-
+        
         
         //clear bottom of table view
         self.tableView.tableFooterView = UIView()
-     
-
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     //MARK: actions
     @IBAction func registerButton(_ sender: UIButton) {
-//        print("firstName: \(firstNameRegister.text!)")
-//        print("lastName: \(lastNameRegister.text!)")
-//        print("userNAme: \(userNameRegister.text!)")
-//        print("number: \(mobileNumberRegister.text!)")
-//        print("email: \(emailRegister.text!)")
-//        print("password: \(passwordRegister.text!)") //delete
+        //        print("firstName: \(firstNameRegister.text!)")
+        //        print("lastName: \(lastNameRegister.text!)")
+        //        print("userNAme: \(userNameRegister.text!)")
+        //        print("number: \(mobileNumberRegister.text!)")
+        //        print("email: \(emailRegister.text!)")
+        //        print("password: \(passwordRegister.text!)") //delete
         
         guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
-                let lastName = lastNameRegister.text, !lastName.isEmpty,
-                let userName = userNameRegister.text, !userName.isEmpty,
-                let email = emailRegister.text, !email.isEmpty,
-                let password = passwordRegister.text, !password.isEmpty,
-                let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
-        else {
-            //TODO: handle error
-            return
+            let lastName = lastNameRegister.text, !lastName.isEmpty,
+            let userName = userNameRegister.text, !userName.isEmpty,
+            let email = emailRegister.text, !email.isEmpty,
+            let password = passwordRegister.text, !password.isEmpty,
+            let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
+            else {
+                //TODO: handle error
+                return
         }
         
         let parameters: Parameters = [
@@ -69,23 +67,44 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             Keys.mobileNumber:mobileNumber,
             Keys.password:password
         ]
-       
-    print(parameters)
-      
+        
         Alamofire.request(URL.register, method: .post, parameters: parameters).responseJSON { response in
-           // print(response.request)
             print(response.result)  // result of response serializaion
-            print(response.result.value)
             
-            guard let jsonData = response.result.value as? [String: Any] else {
-                print("shit. we fucked up")
-                return
+            guard let data = response.data else {print("data var not initilized correctly"); return}
+            let decoder = JSONDecoder()
+            guard let userInfo = try? decoder.decode(JSONResponseStruct.self, from: data)
+                else {print("did not parse correctly")
+                    return
             }
-    
-     
+            
+            // assign user info to static var
+            CurrentUser.firstName = userInfo.firstName!
+            CurrentUser.lastName = userInfo.lastName!
+            CurrentUser.desiredUsername = userInfo.desiredUsername!
+            CurrentUser.mobileNumber = userInfo.mobileNumber!
+            CurrentUser.email = userInfo.email!
+            CurrentUser.photoStorage = userInfo.photoStorage!
+            CurrentUser.userBio = userInfo.userBio!
+            CurrentUser.error = userInfo.error!
+            CurrentUser.message = userInfo.message!
+            
+            
+            // redirected to homescreene if register succesfully
+            
+            let loginSuccess = "Registered Successfully"
+            if userInfo.message == loginSuccess {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "homeView")
+                self.present(viewController, animated: true, completion: nil)
+            }
+            else {
+                //TODO: handle register error
+            }
+            
         }
     }
-
+    
     
     func handleJSONResponse(response: DataResponse<Any>){
         
@@ -94,12 +113,12 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     //toggle show password
     @IBAction func toggleShowPassword1(_ sender: UIButton) {
         if passwordRegister.isSecureTextEntry == true {
-        passwordRegister.isSecureTextEntry = false
-        togglePassword1.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
-    }
-    else if passwordRegister.isSecureTextEntry == false {
-        passwordRegister.isSecureTextEntry = true
-        togglePassword1.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
+            passwordRegister.isSecureTextEntry = false
+            togglePassword1.setImage(#imageLiteral(resourceName: "eyeShow"), for: .normal)
+        }
+        else if passwordRegister.isSecureTextEntry == false {
+            passwordRegister.isSecureTextEntry = true
+            togglePassword1.setImage(#imageLiteral(resourceName: "eyeDoNotShow"), for: .normal)
         }
     }
     @IBAction func toggleShowPassword2(_ sender: UIButton) {
@@ -113,13 +132,13 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     
-  
+    
+    
 }
