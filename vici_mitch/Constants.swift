@@ -15,6 +15,8 @@ struct Keys {
     static let mobileNumber = "mobileNumber"
     static let email = "email"
     static let password = "password"
+    static let userBio = "userBio"
+    static let photoStorage = "photoStorage"
 }
 
 struct URL {

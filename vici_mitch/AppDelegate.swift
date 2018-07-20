@@ -15,10 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
     }
 
+   
+    
+    
+    
+    
+    ///// buch a BS
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -43,4 +48,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+extension UIImage {
+    func scaleDownImage(toSize newSize:CGSize) -> UIImage? {
+        let newRect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height).integral
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {return nil}
+        context.interpolationQuality = .high
+        let flipVerticle = CGAffineTransform(a: 1, b: 0, c: 0, d: -1, tx: 0, ty: newSize.height)
+        context.concatenate(flipVerticle)
+        context.draw(self.cgImage!, in: newRect)
+        let newImage = UIImage(cgImage: context.makeImage()!)
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+}
+extension UIViewController {
+func convertImageToBase64(image: UIImage) -> String {
+    
+    let imageData = UIImagePNGRepresentation(image)
+    let base64String = imageData?.base64EncodedString(options: [])
+    
+    return base64String!
+    
+}
+    //TODO: change from NSdata??????
+func convertBase64ToImage(base64String: String) -> UIImage {
+    
+    let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
+    
+    let decodedimage = UIImage(data: decodedData! as Data)
+    
+    return decodedimage!
+    
+}
+}

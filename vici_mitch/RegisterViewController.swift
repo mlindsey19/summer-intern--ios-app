@@ -41,12 +41,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     //MARK: actions
     @IBAction func registerButton(_ sender: UIButton) {
-        //        print("firstName: \(firstNameRegister.text!)")
-        //        print("lastName: \(lastNameRegister.text!)")
-        //        print("userNAme: \(userNameRegister.text!)")
-        //        print("number: \(mobileNumberRegister.text!)")
-        //        print("email: \(emailRegister.text!)")
-        //        print("password: \(passwordRegister.text!)") //delete
+
         
         guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
             let lastName = lastNameRegister.text, !lastName.isEmpty,

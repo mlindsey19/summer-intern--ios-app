@@ -15,6 +15,7 @@ class LoginViewController: UITableViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var toggleShowPassword: UIButton!
+    @IBOutlet weak var loginNotSuccessfulLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,8 @@ class LoginViewController: UITableViewController {
         //backgound
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
-        
+        //hide unsucessful label
+        loginNotSuccessfulLabel.isHidden = true
         
     }
     
@@ -53,6 +55,12 @@ class LoginViewController: UITableViewController {
             guard let userInfo = try? decoder.decode(JSONResponseStruct.self, from: data)
                 else {print("did not parse correctly")
                     return
+            }
+            //response when loing unsuccesful
+            if userInfo.error == true {
+                // notify user TODO: check for correct email
+                self.loginNotSuccessfulLabel.isHidden = false
+                return
             }
             
             // assign user info to static var

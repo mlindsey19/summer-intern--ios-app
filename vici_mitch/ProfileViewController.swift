@@ -26,9 +26,9 @@ class ProfileViewController: UITableViewController {
     
         firstNameLabel.text = CurrentUser.firstName!
         lastNameLabel.text = CurrentUser.lastName!
-        mobileNumberLabel.text = "Mobile Number: \(CurrentUser.mobileNumber!)"
-        emailLabel.text = "Email: \(CurrentUser.email!)"
-        userNameLabel.text = "Username: \(CurrentUser.desiredUsername!)"
+        mobileNumberLabel.text = CurrentUser.mobileNumber!
+        emailLabel.text = CurrentUser.email!
+        userNameLabel.text = CurrentUser.desiredUsername!
         userBio.text = CurrentUser.userBio!
         
         // background
