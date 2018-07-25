@@ -818,6 +818,7 @@
                         <outlet property="mobileNumberLabel" destination="SRJ-vc-1ck" id="LpJ-W6-cfI"/>
                         <outlet property="userBio" destination="cxN-gQ-w5M" id="Fkv-5c-dZK"/>
                         <outlet property="userNameLabel" destination="XJC-hK-d9y" id="yCv-wU-LSh"/>
+                        <outlet property="userProfileImage" destination="m04-Ej-zmQ" id="yl8-pH-J2y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67Y-IL-Q1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1466,7 +1467,7 @@
                     <navigationItem key="navigationItem" id="WwM-ja-hvl">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="LZi-ON-JwB">
                             <connections>
-                                <action selector="updateProfileSaveButton:" destination="ItD-Af-OcW" id="GnG-W3-Qgq"/>
+                                <action selector="updateProfileSaveButton:" destination="ItD-Af-OcW" id="Suf-39-2sl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

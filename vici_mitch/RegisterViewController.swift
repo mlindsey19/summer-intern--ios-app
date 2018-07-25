@@ -83,6 +83,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             CurrentUser.userBio = userInfo.userBio!
             CurrentUser.error = userInfo.error!
             CurrentUser.message = userInfo.message!
+            CurrentUser.uniqueID = userInfo.uniqueID!
             
             
             // redirected to homescreene if register succesfully

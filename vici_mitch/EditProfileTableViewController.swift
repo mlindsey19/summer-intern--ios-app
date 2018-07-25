@@ -48,6 +48,11 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    
+    
+    
+    //Actions:
+    
     @IBAction func editProfilePicture(_ sender: UIButton) {
         // Hide the keyboard.
         
@@ -67,9 +72,13 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
         
+        
     }
     
-    //Actions:
+    
+    
+    
+
     @IBAction func updateProfileSaveButton(_ sender: Any) {
         
         //convert immage to string
@@ -100,14 +109,16 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             Keys.desiredUserName:userName,
             Keys.email:email,
             Keys.mobileNumber:mobileNumber,
-            //Keys.password:password,
+         //   Keys.password:password,
             Keys.userBio:userBio,
-            Keys.photoStorage:imageString
+            Keys.photoStorage:imageString,
+            Keys.uniqueID:CurrentUser.uniqueID!
         ]
         
+        
+    //POST request
         Alamofire.request(URL.updateUser, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
-            
             guard let data = response.data else {print("data var not initilized correctly"); return}
             let decoder = JSONDecoder()
             guard let userInfo = try? decoder.decode(JSONResponseStruct.self, from: data)
@@ -129,8 +140,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             
             // redirected to homescreene if register succesfully
             
-            let loginSuccess = "Update Successful"
-            if userInfo.message == loginSuccess {
+            let updateSuccess = "Update Successful"
+            if userInfo.message == updateSuccess {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "homeView")
                 self.present(viewController, animated: true, completion: nil)
@@ -142,5 +153,24 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         }
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
     
-}
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        // Set photoImageView to display the selected image.
+        userProfileImage.image = selectedImage
+        
+        userProfileImage.layer.cornerRadius = userProfileImage.frame.size.width / 2;
+        
+        userProfileImage.clipsToBounds = true
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }}

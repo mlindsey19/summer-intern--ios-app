@@ -17,6 +17,7 @@ struct Keys {
     static let password = "password"
     static let userBio = "userBio"
     static let photoStorage = "photoStorage"
+    static let uniqueID = "uniqueID"
 }
 
 struct URL {
@@ -53,7 +54,7 @@ struct URL {
 struct JSONResponseStruct: Decodable {
     let error: Bool?
     let message: String?
-    let uid: String?
+    let uniqueID: String?
     let firstName: String?
     let lastName: String?
     let desiredUsername: String?
@@ -65,7 +66,7 @@ struct JSONResponseStruct: Decodable {
 struct CurrentUser{
     static var error: Bool? = false
     static var message: String? = ""
-    static var uid: String? = ""
+    static var uniqueID: String? = ""
     static var firstName: String? = ""
     static var lastName: String? = ""
     static var desiredUsername: String? = ""

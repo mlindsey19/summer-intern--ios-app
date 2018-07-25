@@ -19,6 +19,7 @@ class ProfileViewController: UITableViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userBio: UITextView!
     
+    @IBOutlet weak var userProfileImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,8 @@ class ProfileViewController: UITableViewController {
         emailLabel.text = CurrentUser.email!
         userNameLabel.text = CurrentUser.desiredUsername!
         userBio.text = CurrentUser.userBio!
+       
+        //userProfileImage.image = TODO: convert back to image
         
         // background
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
