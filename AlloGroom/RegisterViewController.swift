@@ -92,7 +92,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             let loginSuccess = "Registered Successfully"
             if userInfo.message == loginSuccess {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewController(withIdentifier: "homeView")
+                let viewController = storyboard.instantiateViewController(withIdentifier: "profileView")
                 self.present(viewController, animated: true, completion: nil)
             }
             else {

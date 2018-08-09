@@ -73,13 +73,18 @@ func convertImageToBase64(image: UIImage) -> String {
     
 }
     //TODO: change from NSdata??????
-func convertBase64ToImage(base64String: String) -> UIImage {
+func convertBase64ToImage(base64String: String?) -> UIImage {
     
-    let decodedData = NSData(base64Encoded: base64String, options: NSData.Base64DecodingOptions(rawValue: 0) )
+    if (base64String?.isEmpty)! {
+        print("No Image found")
+        return #imageLiteral(resourceName: "no_image_found")
+    }
     
-    let decodedimage = UIImage(data: decodedData! as Data)
+    if let decodedData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters){
+        let image = UIImage(data: decodedData)
+    }
     
-    return decodedimage!
+    return image
     
 }
 }

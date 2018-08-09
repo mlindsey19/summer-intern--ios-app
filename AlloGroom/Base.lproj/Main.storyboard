@@ -1388,7 +1388,7 @@
         <!--Item-->
         <scene sceneID="FMF-A3-keI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4PE-fr-0mu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profileView" automaticallyAdjustsScrollViewInsets="NO" id="4PE-fr-0mu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RZh-Ls-IbR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BeK-iH-1Ka">
