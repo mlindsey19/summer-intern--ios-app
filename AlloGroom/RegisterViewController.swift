@@ -44,11 +44,11 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
 
         
         guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
-            let lastName = lastNameRegister.text, !lastName.isEmpty,
-            let userName = userNameRegister.text, !userName.isEmpty,
-            let email = emailRegister.text, !email.isEmpty,
-            let password = passwordRegister.text, !password.isEmpty,
-            let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
+                let lastName = lastNameRegister.text, !lastName.isEmpty,
+                let userName = userNameRegister.text, !userName.isEmpty,
+                let email = emailRegister.text, !email.isEmpty,
+                let password = passwordRegister.text, !password.isEmpty,
+                let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
             else {
                 //TODO: handle error
                 return
@@ -67,7 +67,9 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             print(response.result)  // result of response serializaion
             
             guard let data = response.data else {print("data var not initilized correctly"); return}
+            
             let decoder = JSONDecoder()
+            
             guard let userInfo = try? decoder.decode(JSONResponseStruct.self, from: data)
                 else {print("did not parse correctly")
                     return
@@ -80,7 +82,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             CurrentUser.mobileNumber = userInfo.mobileNumber!
             CurrentUser.email = userInfo.email!
             CurrentUser.photoStorage = userInfo.photoStorage!
-            CurrentUser.userBio = userInfo.userBio!
             CurrentUser.error = userInfo.error!
             CurrentUser.message = userInfo.message!
             CurrentUser.uniqueID = userInfo.uniqueID!

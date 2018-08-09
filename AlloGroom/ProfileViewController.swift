@@ -17,7 +17,6 @@ class ProfileViewController: UITableViewController {
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userBio: UITextView!
     
     @IBOutlet weak var userProfileImage: UIImageView!
     
@@ -30,7 +29,6 @@ class ProfileViewController: UITableViewController {
         mobileNumberLabel.text = CurrentUser.mobileNumber!
         emailLabel.text = CurrentUser.email!
         userNameLabel.text = CurrentUser.desiredUsername!
-        userBio.text = CurrentUser.userBio!
        
         //userProfileImage.image = TODO: convert back to image
         

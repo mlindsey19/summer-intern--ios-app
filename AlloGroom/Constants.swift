@@ -15,7 +15,6 @@ struct Keys {
     static let mobileNumber = "mobileNumber"
     static let email = "email"
     static let password = "password"
-    static let userBio = "userBio"
     static let photoStorage = "photoStorage"
     static let uniqueID = "uniqueID"
 }
@@ -61,8 +60,8 @@ struct JSONResponseStruct: Decodable {
     let email: String?
     let mobileNumber: String?
     let photoStorage: String?
-    let userBio: String?
 }
+
 struct CurrentUser{
     static var error: Bool? = false
     static var message: String? = ""
@@ -73,5 +72,4 @@ struct CurrentUser{
     static var email: String? = ""
     static var mobileNumber: String? = ""
     static var photoStorage: String? = ""
-    static var userBio: String? = ""
 }

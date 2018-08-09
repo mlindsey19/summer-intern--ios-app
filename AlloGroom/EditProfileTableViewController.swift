@@ -14,7 +14,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     //MARK: properties
     @IBOutlet var textFields: [UITextField]!
     
-    @IBOutlet weak var userBioTextView: UITextView!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -31,7 +30,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         firstNameTextField.text = CurrentUser.firstName!
         lastNameTextField.text = CurrentUser.lastName!
         usernameTextField.text = CurrentUser.desiredUsername!
-        userBioTextView.text = CurrentUser.userBio!
         mobileNumberTextField.text = CurrentUser.mobileNumber!
         emailTextField.text = CurrentUser.email!
     }
@@ -59,7 +57,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
         for textField in self.textFields{
             textField.resignFirstResponder()
         }
-        userBioTextView.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -94,7 +91,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             let lastName = lastNameTextField.text, !lastName.isEmpty,
             let userName = usernameTextField.text, !userName.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
-            let userBio = userBioTextView.text, !userBio.isEmpty,
             let mobileNumber = mobileNumberTextField.text, !mobileNumber.isEmpty
         
         
@@ -110,7 +106,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             Keys.email:email,
             Keys.mobileNumber:mobileNumber,
          //   Keys.password:password,
-            Keys.userBio:userBio,
             Keys.photoStorage:imageString,
             Keys.uniqueID:CurrentUser.uniqueID!
         ]
@@ -133,7 +128,6 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             CurrentUser.mobileNumber = userInfo.mobileNumber!
             CurrentUser.email = userInfo.email!
             CurrentUser.photoStorage = userInfo.photoStorage!
-            CurrentUser.userBio = userInfo.userBio!
             CurrentUser.error = userInfo.error!
             CurrentUser.message = userInfo.message!
             

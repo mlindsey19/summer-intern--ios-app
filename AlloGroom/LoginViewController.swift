@@ -70,7 +70,6 @@ class LoginViewController: UITableViewController {
             CurrentUser.mobileNumber = userInfo.mobileNumber!
             CurrentUser.email = userInfo.email!
             CurrentUser.photoStorage = userInfo.photoStorage!
-            CurrentUser.userBio = userInfo.userBio!
             CurrentUser.error = userInfo.error!
             CurrentUser.message = userInfo.message!
             CurrentUser.uniqueID = userInfo.uniqueID!
