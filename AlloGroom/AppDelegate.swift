@@ -75,13 +75,9 @@ func convertImageToBase64(image: UIImage) -> String {
     //TODO: change from NSdata??????
 func convertBase64ToImage(base64String: String?) -> UIImage {
     
-    if (base64String?.isEmpty)! {
-        print("No Image found")
-        return #imageLiteral(resourceName: "no_image_found")
-    }
     
-    if let decodedData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters){
-        let image = UIImage(data: decodedData)
+    guard  let decodedData = Data(base64Encoded: base64String!, options: .ignoreUnknownCharacters), let image = UIImage(data: decodedData), (base64String?.isEmpty)! else {
+            return #imageLiteral(resourceName: "defaultProfileImage")
     }
     
     return image

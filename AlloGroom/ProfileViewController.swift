@@ -30,7 +30,7 @@ class ProfileViewController: UITableViewController {
         emailLabel.text = CurrentUser.email!
         userNameLabel.text = CurrentUser.desiredUsername!
        
-        userProfileImage.image = convertBase64ToImage(base64String: CurrentUser.photoStorage)
+        userProfileImage.image = convertBase64ToImage(base64String: CurrentUser.photoStorage!)
         
         // background
         tableView.backgroundView = UIImageView(image: UIImage(named: "backgroundImage"))
