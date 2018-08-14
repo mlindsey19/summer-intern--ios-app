@@ -24,6 +24,8 @@
 		F39E731E20D8458000EBCF0A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */; };
 		F39E732020DD3BF300EBCF0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */; };
 		F3AB9CC520E177CB0036C50E /* UpdatePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */; };
+		F3D0A85F212338F700D09654 /* SelectEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */; };
+		F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0A86021233A1500D09654 /* RatingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordTableViewController.swift; sourceTree = "<group>"; };
+		F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEmailViewController.swift; sourceTree = "<group>"; };
+		F3D0A86021233A1500D09654 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,18 +136,20 @@
 		3052FB7C20C9D59800CB09F8 /* AlloGroom */ = {
 			isa = PBXGroup;
 			children = (
-				305A5F7220E6D3AB00E8AC87 /* Constants.swift */,
-				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
-				3052FB7D20C9D59800CB09F8 /* AppDelegate.swift */,
 				3052FB7F20C9D59800CB09F8 /* LoginViewController.swift */,
 				F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */,
+				305A5F7220E6D3AB00E8AC87 /* Constants.swift */,
+				3052FB7D20C9D59800CB09F8 /* AppDelegate.swift */,
+				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
+				F3D0A86021233A1500D09654 /* RatingViewController.swift */,
+				F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */,
+				3052FB8120C9D59800CB09F8 /* Main.storyboard */,
 				F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */,
 				30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */,
-				30D0E33320C9FD17009A9FE4 /* Cartfile */,
-				3052FB8120C9D59800CB09F8 /* Main.storyboard */,
 				F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */,
 				F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */,
 				F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */,
+				30D0E33320C9FD17009A9FE4 /* Cartfile */,
 				3052FB8420C9D59A00CB09F8 /* Assets.xcassets */,
 				3052FB8920C9D59A00CB09F8 /* Info.plist */,
 			);
@@ -325,10 +331,12 @@
 				3052FB8020C9D59800CB09F8 /* LoginViewController.swift in Sources */,
 				F39E731E20D8458000EBCF0A /* WelcomeViewController.swift in Sources */,
 				F39E732020DD3BF300EBCF0A /* ProfileViewController.swift in Sources */,
+				F3D0A85F212338F700D09654 /* SelectEmailViewController.swift in Sources */,
 				F3AB9CC520E177CB0036C50E /* UpdatePasswordTableViewController.swift in Sources */,
 				F39E731C20D2B49D00EBCF0A /* RegisterViewController.swift in Sources */,
 				3052FB7E20C9D59800CB09F8 /* AppDelegate.swift in Sources */,
 				F3625C3F211DFFA1007FEE22 /* RatingControll.swift in Sources */,
+				F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */,
 				30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */,
 				305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */,
 			);

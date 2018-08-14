@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Keys {
+struct Keys {  // keys for parameters
     static let firstName = "firstName"
     static let lastName = "lastName"
     static let desiredUserName = "desiredUsername"
@@ -17,12 +17,17 @@ struct Keys {
     static let password = "password"
     static let photoStorage = "photoStorage"
     static let uniqueID = "uniqueID"
+    static let targetEmail = "targetEmail"
+    static let ratingValue = "ratingValue"
+    static let ratingKey = "ratingKey"
+    static let userEmail = "userEmail"
 }
 
 struct URL {
     static let login = "http://mitch.beanstalkweb.com/login.php"
     static let register = "http://mitch.beanstalkweb.com/register.php"
     static let updateUser = "http://mitch.beanstalkweb.com/updateUser.php"
+    static let addToRatingTable = "http://mitch.beanstalkweb.com/addToRatingTable.php"
 }
 
 //struct User: Decodable{
@@ -72,4 +77,5 @@ struct CurrentUser{
     static var email: String? = ""
     static var mobileNumber: String? = ""
     static var photoStorage: String? = ""
+    static var tagetEmail: String? = ""
 }
