@@ -21,7 +21,7 @@ class RatingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        targetEmail.text = CurrentUser.tagetEmail
+        targetEmail.text = CurrentUser.targetEmail
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,7 +32,7 @@ class RatingViewController: UIViewController {
     @IBAction func rateButton(_ sender: Any) {
         //set parameters
         let parameters: Parameters = [
-            Keys.targetEmail: targetEmail,
+            Keys.targetEmail: CurrentUser.targetEmail!,
             Keys.userEmail: CurrentUser.email!,
             Keys.ratingKey: ratingkey,
             Keys.ratingValue: rating.rating

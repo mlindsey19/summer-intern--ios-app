@@ -28,7 +28,7 @@ class SelectEmailViewController: UITableViewController {
     
     @IBAction func rateButton(_ sender: UIButton) {
         
-      CurrentUser.tagetEmail = tagetEmail.text
+      CurrentUser.targetEmail = tagetEmail.text
       
         
     }

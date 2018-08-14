@@ -77,5 +77,5 @@ struct CurrentUser{
     static var email: String? = ""
     static var mobileNumber: String? = ""
     static var photoStorage: String? = ""
-    static var tagetEmail: String? = ""
+    static var targetEmail: String? = ""
 }
