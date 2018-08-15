@@ -1452,6 +1452,7 @@
                                                     <state key="normal" title="select from contacts"/>
                                                     <connections>
                                                         <action selector="selectFromContactsButton:" destination="AlL-tY-IfZ" eventType="touchUpInside" id="XA5-sa-wAC"/>
+                                                        <segue destination="rHF-0H-uPi" kind="show" id="c7R-bL-OIY"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1475,6 +1476,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9JR-g6-LgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="1396.5517241379312"/>
+        </scene>
+        <!--Email From Contacts Table View Controller-->
+        <scene sceneID="uIz-Vg-UQ5">
+            <objects>
+                <tableViewController id="rHF-0H-uPi" customClass="EmailFromContactsTableViewController" customModule="AlloGroom" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ur1-oR-27q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="emailTableViewCell" rowHeight="66" id="wfy-fg-7pe" customClass="contactTableViewCell" customModule="AlloGroom" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wfy-fg-7pe" id="vKW-mL-a8s">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJf-wP-V1b">
+                                            <rect key="frame" x="16" y="9" width="343" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="386-3L-xga">
+                                            <rect key="frame" x="16" y="33" width="343" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emailLabel" destination="386-3L-xga" id="ktx-A9-Ehb"/>
+                                    <outlet property="nameLabel" destination="WJf-wP-V1b" id="YkZ-KX-V1g"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZy-7H-HWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416.8" y="1192.3538230884558"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="CRe-Ny-BaM">
@@ -1542,7 +1587,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTt-3H-2MA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="1396.5517241379312"/>
+            <point key="canvasLocation" x="2236" y="1397"/>
         </scene>
         <!--UserStats-->
         <scene sceneID="lwD-LS-bz7">

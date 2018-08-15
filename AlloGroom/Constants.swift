@@ -79,3 +79,10 @@ struct CurrentUser{
     static var photoStorage: String? = ""
     static var targetEmail: String? = ""
 }
+
+struct ContactStruct {
+    let firstName: String
+    let lastName: String?
+    let email: String
+}
+

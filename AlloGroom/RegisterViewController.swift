@@ -66,7 +66,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         Alamofire.request(URL.register, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
             
-            guard let data = response.data else {print("data var not initilized correctly"); return}
+            guard let data = response.data else { print ("data var not initilized correctly"); return}
             
             let decoder = JSONDecoder()
             
