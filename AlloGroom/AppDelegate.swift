@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Contacts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -83,4 +84,50 @@ func convertBase64ToImage(base64String: String?) -> UIImage {
     return image
     
 }
+}
+
+extension EmailListTableViewController {
+    
+  func fetchContacts() {
+        print("attempting to fectch contacts..")
+        
+        
+        let store = CNContactStore()
+        
+        store.requestAccess(for: .contacts) { (granted, err) in
+            if let err = err {
+                print("failed to rewuest access: ", err)
+                return
+            }
+            
+            if granted {
+                print("access granted")
+                
+                let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactEmailAddressesKey]
+                let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
+                
+                do {
+                    
+                    try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointerIfYouWantToStopEnumerating) in
+                        
+                        print(contact.givenName)
+                        print(contact.emailAddresses.first?.value ?? "")
+                        
+                        self.contactsArray.append(ContactStruct(firstName: contact.givenName, lastName: contact.familyName, email: (contact.emailAddresses.first?.value)!))
+                        
+                        
+                    })
+                    
+                } catch let err {
+                    print( "failed to enumerate contacts: ", err)
+                }
+                
+            }else {
+                print("access denied...")
+                
+            }
+        }
+        return
+    }
+    
 }

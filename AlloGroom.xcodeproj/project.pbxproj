@@ -18,8 +18,8 @@
 		30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 30D0E33320C9FD17009A9FE4 /* Cartfile */; };
 		30D0E33720C9FE5C009A9FE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; };
 		30D0E33820C9FE5C009A9FE4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F34B47022124AD2900848FD3 /* EmailFromContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B47012124AD2900848FD3 /* EmailFromContactsTableViewController.swift */; };
 		F34B47072124C19300848FD3 /* contactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B47062124C19300848FD3 /* contactTableViewCell.swift */; };
+		F34B47092125F5CB00848FD3 /* EmailListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */; };
 		F3625C3F211DFFA1007FEE22 /* RatingControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3625C3E211DFFA1007FEE22 /* RatingControll.swift */; };
 		F368671420E3ED6400B6DCE3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */; };
 		F39E731C20D2B49D00EBCF0A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */; };
@@ -78,8 +78,8 @@
 		30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		30D0E33320C9FD17009A9FE4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		F34B47012124AD2900848FD3 /* EmailFromContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFromContactsTableViewController.swift; sourceTree = "<group>"; };
 		F34B47062124C19300848FD3 /* contactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactTableViewCell.swift; sourceTree = "<group>"; };
+		F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailListTableViewController.swift; sourceTree = "<group>"; };
 		F3625C3E211DFFA1007FEE22 /* RatingControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControll.swift; sourceTree = "<group>"; };
 		F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 				3052FB7D20C9D59800CB09F8 /* AppDelegate.swift */,
 				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
 				F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */,
-				F34B47012124AD2900848FD3 /* EmailFromContactsTableViewController.swift */,
+				F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */,
 				F3D0A86021233A1500D09654 /* RatingViewController.swift */,
 				3052FB8120C9D59800CB09F8 /* Main.storyboard */,
 				F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */,
@@ -345,7 +345,7 @@
 				F3625C3F211DFFA1007FEE22 /* RatingControll.swift in Sources */,
 				F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */,
 				30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */,
-				F34B47022124AD2900848FD3 /* EmailFromContactsTableViewController.swift in Sources */,
+				F34B47092125F5CB00848FD3 /* EmailListTableViewController.swift in Sources */,
 				305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

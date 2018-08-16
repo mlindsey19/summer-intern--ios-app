@@ -15,14 +15,15 @@ class EmailFromContactsTableViewController: UITableViewController {
     //MARK: Properties
 
     
+      let cellIdentifier = "emailTableViewCell"
 
-    var contactsArray = [ContactStruct]()
-
+    var contactsArray:[ContactStruct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactsArray = fetchContacts()
+       fetchContacts()
 
+        tableView.register(contactTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,31 +39,31 @@ class EmailFromContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return contactsArray.count
+        return self.contactsArray.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> contactTableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier = "emailTableViewCell"
+      
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? contactTableViewCell else {
             fatalError( "the dequed cell was not an instance of contactTableviewCell")
         }
         
         let contactWithEmail = contactsArray[indexPath.row]
-   
-        cell.nameLabel?.text = "\(contactWithEmail.firstName) \(contactWithEmail.lastName ?? "" )  "
+        let lastname = contactWithEmail.lastName ?? ""
+        cell.nameLabel?.text = "\(contactWithEmail.firstName) \(lastname)"
         cell.emailLabel?.text = "\(contactWithEmail.email)"
         
     return cell
     }
     
     
-}
-    private func fetchContacts() -> [ContactStruct] {
+
+private func fetchContacts() {
         print("attempting to fectch contacts..")
-        
-        var contactsWithEmail = [ContactStruct]()
+    
+    
         let store = CNContactStore()
         
         store.requestAccess(for: .contacts) { (granted, err) in
@@ -84,10 +85,11 @@ class EmailFromContactsTableViewController: UITableViewController {
                         print(contact.givenName)
                         print(contact.emailAddresses.first?.value ?? "")
                         
-                        contactsWithEmail.append(ContactStruct(firstName: contact.givenName, lastName: contact.familyName, email: contact.emailAddresses.first?.value as! String))
+                        self.contactsArray.append(ContactStruct(firstName: contact.givenName, lastName: contact.familyName, email: (contact.emailAddresses.first?.value)!))
                      
                         
                     })
+                    
                 } catch let err {
                     print( "failed to enumerate contacts: ", err)
                 }
@@ -97,9 +99,9 @@ class EmailFromContactsTableViewController: UITableViewController {
                 
             }
         }
-        
-        return contactsWithEmail
+    
+        return
 }
 
-
+}
 

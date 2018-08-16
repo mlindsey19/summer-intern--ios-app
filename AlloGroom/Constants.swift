@@ -30,30 +30,7 @@ struct URL {
     static let addToRatingTable = "http://mitch.beanstalkweb.com/addToRatingTable.php"
 }
 
-//struct User: Decodable{
-//    static var uniqueID: String = ""
-//    static var firstName = ""
-//    static var lastName = ""
-//    static var desiredUsername = ""
-//    static var email = ""
-//    static var mobileNumber = ""
-//    static var password = ""
-//    static var userProfilePhoto = ""
-//    static var bio = ""
-//}
-//struct JSONResponse: Decodable{
-//    "error": false,
-//    "message": "Successfully Logged In",
-//    "uid": "test_uid",
-//    "user": [
-//        "firstName": "test_first_name",
-//        "lastName": "test_last_name",
-//        "desiredUsername": "test_username",
-//        "email": "test_email",
-//        "mobilePhone": "test_phone_number",
-//        "photoStorage": "test_photo_storage",
-//        "userBio": "test_bio"
-//    ]}
+
 
 struct JSONResponseStruct: Decodable {
     let error: Bool?
@@ -83,6 +60,6 @@ struct CurrentUser{
 struct ContactStruct {
     let firstName: String
     let lastName: String?
-    let email: String
+    let email: NSString
 }
 
