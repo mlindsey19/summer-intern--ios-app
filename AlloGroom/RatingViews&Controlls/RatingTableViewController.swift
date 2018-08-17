@@ -9,19 +9,37 @@
 import UIKit
 import Alamofire
 
-class RatingViewController: UIViewController {
+class RatingTableViewController: UITableViewController {
     
     //MARK: Properties
-    @IBOutlet weak var targetEmail: UITextField!
+    @IBOutlet weak var traitNameLabel: UILabel!
+    @IBOutlet weak var targetEmailLabel: UILabel!
     @IBOutlet weak var rating: RatingControl!
+    
+    //trait array
+    var traits = [TraitStruct]()
     
     //rating keys
     let ratingkey = 1
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        targetEmail.text = CurrentUser.targetEmail
+        //remove emptry cells under button
+        self.tableView.tableFooterView = UIView()
+
+        
+//
+        targetEmailLabel.text = CurrentUser.targetEmail
+
+        fetchTraits{
+            //reload data after fetched on main thread
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

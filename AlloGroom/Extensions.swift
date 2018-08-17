@@ -8,7 +8,7 @@
 
 import UIKit
 import Contacts
-
+import Alamofire
 
 
 
@@ -100,4 +100,32 @@ extension EmailListTableViewController {
         return
     }
     
+}
+
+extension RatingTableViewController {
+    
+    func fetchTraits(withCompletion completion: @escaping () -> Void) {
+    
+        let traitNumber: Int = 1
+        
+        let parameters: Parameters = [
+            "traitNumber":traitNumber
+        ]
+        
+        Alamofire.request(URL.getTraits, method: .post, parameters: parameters).responseJSON { response in
+            print(response.result)  // result of response serializaion
+            
+            guard let data = response.data else {print("data var not initilized correctly"); return}
+            let decoder = JSONDecoder()
+            guard (try? decoder.decode(JSONResponseStruct.self, from: data)) != nil
+                else {print("did not parse correctly")
+                    return
+            }
+            //
+            
+            
+        }
+        completion()
+
+    }
 }

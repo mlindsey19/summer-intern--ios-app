@@ -28,6 +28,7 @@ struct URL {
     static let register = "http://mitch.beanstalkweb.com/register.php"
     static let updateUser = "http://mitch.beanstalkweb.com/updateUser.php"
     static let addToRatingTable = "http://mitch.beanstalkweb.com/addToRatingTable.php"
+    static let getTraits = "http://mitch.beanstalkweb.com/getTraits.php"
 }
 
 
@@ -63,3 +64,8 @@ struct ContactStruct {
     let email: NSString
 }
 
+struct TraitStruct {
+    let name: String
+    let traitKey: String
+    let inUseBool: Bool
+}

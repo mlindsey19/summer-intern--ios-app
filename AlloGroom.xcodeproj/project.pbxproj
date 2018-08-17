@@ -28,7 +28,7 @@
 		F39E732020DD3BF300EBCF0A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */; };
 		F3AB9CC520E177CB0036C50E /* UpdatePasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */; };
 		F3D0A85F212338F700D09654 /* SelectEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */; };
-		F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0A86021233A1500D09654 /* RatingViewController.swift */; };
+		F3D0A86121233A1500D09654 /* RatingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D0A86021233A1500D09654 /* RatingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,7 @@
 		F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePasswordTableViewController.swift; sourceTree = "<group>"; };
 		F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEmailViewController.swift; sourceTree = "<group>"; };
-		F3D0A86021233A1500D09654 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		F3D0A86021233A1500D09654 /* RatingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +191,7 @@
 				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
 				F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */,
 				F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */,
-				F3D0A86021233A1500D09654 /* RatingViewController.swift */,
+				F3D0A86021233A1500D09654 /* RatingTableViewController.swift */,
 				F34B47062124C19300848FD3 /* contactTableViewCell.swift */,
 			);
 			path = "RatingViews&Controlls";
@@ -371,7 +371,7 @@
 				F34B47072124C19300848FD3 /* contactTableViewCell.swift in Sources */,
 				F3625C3F211DFFA1007FEE22 /* RatingControll.swift in Sources */,
 				305F0BA221271C3600BBB6E6 /* Extensions.swift in Sources */,
-				F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */,
+				F3D0A86121233A1500D09654 /* RatingTableViewController.swift in Sources */,
 				30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */,
 				F34B47092125F5CB00848FD3 /* EmailListTableViewController.swift in Sources */,
 				305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */,
