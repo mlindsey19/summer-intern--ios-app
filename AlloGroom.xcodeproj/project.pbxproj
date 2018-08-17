@@ -14,6 +14,7 @@
 		3052FB9320C9D59A00CB09F8 /* AlloGroomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9220C9D59A00CB09F8 /* AlloGroomTests.swift */; };
 		3052FB9E20C9D59A00CB09F8 /* AlloGroomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3052FB9D20C9D59A00CB09F8 /* AlloGroomUITests.swift */; };
 		305A5F7320E6D3AB00E8AC87 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305A5F7220E6D3AB00E8AC87 /* Constants.swift */; };
+		305F0BA221271C3600BBB6E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305F0BA121271C3600BBB6E6 /* Extensions.swift */; };
 		30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */; };
 		30D0E33420C9FD17009A9FE4 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 30D0E33320C9FD17009A9FE4 /* Cartfile */; };
 		30D0E33720C9FE5C009A9FE4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */; };
@@ -75,6 +76,7 @@
 		3052FB9D20C9D59A00CB09F8 /* AlloGroomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlloGroomUITests.swift; sourceTree = "<group>"; };
 		3052FB9F20C9D59A00CB09F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		305A5F7220E6D3AB00E8AC87 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		305F0BA121271C3600BBB6E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		30D0E33320C9FD17009A9FE4 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Cartfile; path = ../Cartfile; sourceTree = "<group>"; };
 		30D0E33620C9FE5C009A9FE4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -140,21 +142,13 @@
 		3052FB7C20C9D59800CB09F8 /* AlloGroom */ = {
 			isa = PBXGroup;
 			children = (
-				3052FB7F20C9D59800CB09F8 /* LoginViewController.swift */,
-				F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */,
 				305A5F7220E6D3AB00E8AC87 /* Constants.swift */,
 				3052FB7D20C9D59800CB09F8 /* AppDelegate.swift */,
-				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
-				F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */,
-				F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */,
-				F3D0A86021233A1500D09654 /* RatingViewController.swift */,
+				305F0BA121271C3600BBB6E6 /* Extensions.swift */,
 				3052FB8120C9D59800CB09F8 /* Main.storyboard */,
-				F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */,
-				30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */,
-				F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */,
-				F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */,
-				F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */,
-				F34B47062124C19300848FD3 /* contactTableViewCell.swift */,
+				305F0B9E2126302B00BBB6E6 /* LoginRegister */,
+				305F0B9F2126311D00BBB6E6 /* RatingViews&Controlls */,
+				305F0BA02126318100BBB6E6 /* UserPrfile */,
 				30D0E33320C9FD17009A9FE4 /* Cartfile */,
 				3052FB8420C9D59A00CB09F8 /* Assets.xcassets */,
 				3052FB8920C9D59A00CB09F8 /* Info.plist */,
@@ -179,6 +173,39 @@
 				3052FB9F20C9D59A00CB09F8 /* Info.plist */,
 			);
 			path = AlloGroomUITests;
+			sourceTree = "<group>";
+		};
+		305F0B9E2126302B00BBB6E6 /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F39E731D20D8458000EBCF0A /* WelcomeViewController.swift */,
+				3052FB7F20C9D59800CB09F8 /* LoginViewController.swift */,
+				F39E731B20D2B49D00EBCF0A /* RegisterViewController.swift */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		305F0B9F2126311D00BBB6E6 /* RatingViews&Controlls */ = {
+			isa = PBXGroup;
+			children = (
+				F3625C3E211DFFA1007FEE22 /* RatingControll.swift */,
+				F3D0A85E212338F700D09654 /* SelectEmailViewController.swift */,
+				F34B47082125F5CB00848FD3 /* EmailListTableViewController.swift */,
+				F3D0A86021233A1500D09654 /* RatingViewController.swift */,
+				F34B47062124C19300848FD3 /* contactTableViewCell.swift */,
+			);
+			path = "RatingViews&Controlls";
+			sourceTree = "<group>";
+		};
+		305F0BA02126318100BBB6E6 /* UserPrfile */ = {
+			isa = PBXGroup;
+			children = (
+				30D04A2320DEB6FF00D16096 /* EditProfileTableViewController.swift */,
+				F39E731F20DD3BF300EBCF0A /* ProfileViewController.swift */,
+				F368671320E3ED6400B6DCE3 /* ForgotPasswordViewController.swift */,
+				F3AB9CC420E177CB0036C50E /* UpdatePasswordTableViewController.swift */,
+			);
+			path = UserPrfile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +370,7 @@
 				3052FB7E20C9D59800CB09F8 /* AppDelegate.swift in Sources */,
 				F34B47072124C19300848FD3 /* contactTableViewCell.swift in Sources */,
 				F3625C3F211DFFA1007FEE22 /* RatingControll.swift in Sources */,
+				305F0BA221271C3600BBB6E6 /* Extensions.swift in Sources */,
 				F3D0A86121233A1500D09654 /* RatingViewController.swift in Sources */,
 				30D04A2420DEB6FF00D16096 /* EditProfileTableViewController.swift in Sources */,
 				F34B47092125F5CB00848FD3 /* EmailListTableViewController.swift in Sources */,

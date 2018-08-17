@@ -41,14 +41,14 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
     //MARK: actions
     @IBAction func registerButton(_ sender: UIButton) {
-
+        
         
         guard   let firstName = firstNameRegister.text, !firstName.isEmpty,
-                let lastName = lastNameRegister.text, !lastName.isEmpty,
-                let userName = userNameRegister.text, !userName.isEmpty,
-                let email = emailRegister.text, !email.isEmpty,
-                let password = passwordRegister.text, !password.isEmpty,
-                let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
+            let lastName = lastNameRegister.text, !lastName.isEmpty,
+            let userName = userNameRegister.text, !userName.isEmpty,
+            let email = emailRegister.text, !email.isEmpty,
+            let password = passwordRegister.text, !password.isEmpty,
+            let mobileNumber = mobileNumberRegister.text, !mobileNumber.isEmpty
             else {
                 //TODO: handle error
                 return

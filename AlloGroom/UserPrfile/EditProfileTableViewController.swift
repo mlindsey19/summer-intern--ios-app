@@ -75,7 +75,7 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
     
     
     
-
+    
     @IBAction func updateProfileSaveButton(_ sender: Any) {
         
         //convert immage to string
@@ -92,8 +92,8 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             let userName = usernameTextField.text, !userName.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
             let mobileNumber = mobileNumberTextField.text, !mobileNumber.isEmpty
-        
-        
+            
+            
             else {
                 //TODO: handle error
                 return
@@ -105,13 +105,13 @@ class EditProfileTableViewController: UITableViewController, UIImagePickerContro
             Keys.desiredUserName:userName,
             Keys.email:email,
             Keys.mobileNumber:mobileNumber,
-         //   Keys.password:password,
+            //   Keys.password:password,
             Keys.photoStorage:imageString,
             Keys.uniqueID:CurrentUser.uniqueID!
         ]
         
         
-    //POST request
+        //POST request
         Alamofire.request(URL.updateUser, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
             guard let data = response.data else {print("data var not initilized correctly"); return}

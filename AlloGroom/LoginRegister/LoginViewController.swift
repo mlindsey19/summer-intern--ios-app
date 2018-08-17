@@ -38,15 +38,23 @@ class LoginViewController: UITableViewController {
         print("password: \(passwordTextField.text!)")
         
         
-        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
-            //TODO: handle error
-            return
+        guard let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty
+            
+            else {
+                
+                //TODO: handle error
+                return
         }
+        
+        
+        //        parameters for alamofire request
         let parameters: Parameters = [
             Keys.email: email,
             Keys.password: password
         ]
         
+        //        request to get user info
         Alamofire.request(URL.login, method: .post, parameters: parameters).responseJSON { response in
             print(response.result)  // result of response serializaion
             
@@ -108,6 +116,6 @@ class LoginViewController: UITableViewController {
     
     
     
-  
+    
 }
 

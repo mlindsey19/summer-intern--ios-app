@@ -79,7 +79,7 @@ class UpdatePasswordTableViewController: UITableViewController {
     
     
     @IBAction func updatePasswordButton(_ sender: UIButton) {
-        print(CurrentUser.desiredUsername,CurrentUser.email, CurrentUser.firstName, separator: "\n")
+        print(CurrentUser.desiredUsername!,CurrentUser.email!, CurrentUser.firstName!, separator: "\n")
         
     }
     

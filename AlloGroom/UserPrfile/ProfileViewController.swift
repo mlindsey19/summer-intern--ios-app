@@ -23,13 +23,13 @@ class ProfileViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         firstNameLabel.text = CurrentUser.firstName!
         lastNameLabel.text = CurrentUser.lastName!
         mobileNumberLabel.text = CurrentUser.mobileNumber!
         emailLabel.text = CurrentUser.email!
         userNameLabel.text = CurrentUser.desiredUsername!
-       
+        
         userProfileImage.image = convertBase64ToImage(base64String: CurrentUser.photoStorage!)
         
         // background

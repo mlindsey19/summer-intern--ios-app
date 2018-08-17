@@ -20,10 +20,10 @@ class RatingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         targetEmail.text = CurrentUser.targetEmail
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,13 +48,13 @@ class RatingViewController: UIViewController {
                 else {print("did not parse correctly")
                     return
             }
-        //
-        
-        
+            //
+            
+            
         }
         
         
     }
     
-   
+    
 }
