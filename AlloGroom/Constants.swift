@@ -23,6 +23,7 @@ struct Keys {  // keys for parameters
     static let userEmail = "userEmail"
 }
 
+//url strings for alamofire request
 struct URL {
     static let login = "http://mitch.beanstalkweb.com/login.php"
     static let register = "http://mitch.beanstalkweb.com/register.php"
@@ -32,7 +33,7 @@ struct URL {
 }
 
 
-
+//struct for login response
 struct JSONResponseStruct: Decodable {
     let error: Bool?
     let message: String?
@@ -44,7 +45,7 @@ struct JSONResponseStruct: Decodable {
     let mobileNumber: String?
     let photoStorage: String?
 }
-
+//user variables
 struct CurrentUser{
     static var error: Bool? = false
     static var message: String? = ""
@@ -57,13 +58,13 @@ struct CurrentUser{
     static var photoStorage: String? = ""
     static var targetEmail: String? = ""
 }
-
+//struct to pull contacts from from phone
 struct ContactStruct {
     let firstName: String
     let lastName: String?
     let email: NSString
 }
-
+//used to catch request from MySQL table with traits *****make DECODABLE
 struct TraitStruct {
     let name: String
     let traitKey: String

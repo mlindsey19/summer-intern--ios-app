@@ -1605,13 +1605,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X6N-mm-zqG" customClass="RatingControl" customModule="AlloGroom" customModuleProvider="target">
-                                                    <rect key="frame" x="77" y="11" width="220" height="78"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="78"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="X6N-mm-zqG" firstAttribute="top" secondItem="s4o-tr-Aec" secondAttribute="topMargin" id="0si-Vs-ryh"/>
                                                 <constraint firstItem="X6N-mm-zqG" firstAttribute="centerX" secondItem="s4o-tr-Aec" secondAttribute="centerX" id="4cT-ZK-wyt"/>
                                                 <constraint firstItem="X6N-mm-zqG" firstAttribute="bottom" secondItem="s4o-tr-Aec" secondAttribute="bottomMargin" id="F2J-vH-6TH"/>
+                                                <constraint firstItem="X6N-mm-zqG" firstAttribute="leading" secondItem="s4o-tr-Aec" secondAttribute="leadingMargin" id="Jyi-Es-TF9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1676,7 +1677,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGx-bj-acn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="1886"/>
+            <point key="canvasLocation" x="1416.8" y="1885.9070464767617"/>
         </scene>
         <!--UserStats-->
         <scene sceneID="lwD-LS-bz7">

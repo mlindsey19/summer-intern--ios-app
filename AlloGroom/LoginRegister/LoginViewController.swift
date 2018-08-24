@@ -100,7 +100,6 @@ class LoginViewController: UITableViewController {
     
     
     //toggle secure password entry
-    //TODO: add code to keep password after secure text is re-enabled but check if security issue
     
     @IBAction func toggleShowPassword(_ sender: UIButton) {
         
