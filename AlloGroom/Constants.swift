@@ -21,6 +21,7 @@ struct Keys {  // keys for parameters
     static let ratingValue = "ratingValue"
     static let ratingKey = "ratingKey"
     static let userEmail = "userEmail"
+    static let traitNumber = "traitNumber"
 }
 
 //url strings for alamofire request
@@ -65,8 +66,12 @@ struct ContactStruct {
     let email: NSString
 }
 //used to catch request from MySQL table with traits *****make DECODABLE
-struct TraitStruct {
-    let name: String
-    let traitKey: String
-    let inUseBool: Bool
+struct TraitStruct: Decodable {
+    let error: Bool?
+    let traitName: String?
+    let traitKey: Int?
+    let inUseBool: Bool?
+    let message: String?
+    
+  
 }
